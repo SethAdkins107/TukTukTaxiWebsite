@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your business description here">
+    <title>Davenport's Best Tuktuk Rides</title>
+    <link rel="stylesheet" href="main.css">
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF_UAsW60LmqlpNy6DwlzM98bgV1uRTOU&libraries=places&callback=initMap">
+        </script>
+
+</head>
+<body onload="initMap()">
+    <!-- Header Section
+    To hold the Main page options and menu -->
+    <header>
+        <nav>
+            <!--The main logo for the website-->
+            <div class="logo">
+                <a href="index.html">TukTuk Taxi </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Davenport</h1>
+        <p>Come explore this wonderful city in leisure 
+            with a Tuktuk ride given by Jason Adkins,
+            your local e-bike enthusiast!</p>
+
+        <br><br>
+        
+        <!-- Input Section -->
+        <div class="input">
+            <!-- To have input box for start point-->
+            <input id="start" type="text" placeholder="Pickup Point">
+            
+            <br>
+    
+            <!-- To have input box for destination-->
+            <input id="end" type="text" placeholder="Destination">
+
+            <br><br>
+    
+            <!-- To order the ride for right now -->
+            <button id="now">ASAP</button>
+
+            <br>
+    
+            <!-- To schedule the ride ahead of time -->
+            <select id="hour">
+                <option value="18:00">6</option>
+                <option value="19:00">7</option>
+                <option value="20:00">8</option>
+                <option value="21:00">9</option>
+            </select>
+            :
+            <select id="quarter hour">
+                <option value="0">00</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="45">45</option>
+            </select>
+
+            <br><br>
+    
+            <!-- To move to payment -->
+            <button onclick="getDirect()">Order</button>
+        </div>
+
+        
+        <div id="output"></div>
+
+        <br><br><br><br>
+
+        <div class="container">
+            <div id="map"></div>
+        </div>
+
+        <script src="map.js"></script>
+    
+        <br><br><br><br>
+
+        <div class="contact">
+            <h2>Contact Info</h2>
+            
+            <p> 
+                +1 (563) 396-4371
+                <br>
+                jasonadkins@gmail.com
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 TukTuk Taxi</p>
+            <ul class="footer-menu">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

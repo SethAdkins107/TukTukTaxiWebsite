@@ -1,0 +1,65 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Global Styles */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color: #000;
+    padding: 15px 15px 20px 15px;
+}
+
+.hero h1 {
+    color: #50c878;
+    text-decoration: underline;
+    font-family: cursive;
+}
+
+.hero #map {
+    height: 450px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.hero #output {
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Design - Adjust styles for smaller screens as needed */
+
+@media screen and (max-width: 768px) {
+    /* Add responsive styles here */
+}
