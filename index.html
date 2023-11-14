@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets basic background info for the website, starting with what characters, how it will be viewed, 
+    our basic description (tbd), title, what file to use for styling, what file to use for functionality,
+    and an https call to the Google Maps API for the directions and map on the page-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your business description here">
     <title>Davenport's Best Tuktuk Rides</title>
     <link rel="stylesheet" href="main.css">
+    <script src="map.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF_UAsW60LmqlpNy6DwlzM98bgV1uRTOU&libraries=places&callback=initMap">
         </script>
 
 </head>
+
+<!-- Runs the initMap function from map.js to show the map on the page when it loads-->
 <body onload="initMap()">
-    <!-- Header Section
-    To hold the Main page options and menu -->
     <header>
         <nav>
-            <!--The main logo for the website-->
+            <!--The main logo for the website  (tbd)-->
             <div class="logo">
-                <a href="index.html">TukTuk Taxi </a>
+                <a> TukTuk Taxi </a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Basic intro -->
         <h1>Welcome to Davenport</h1>
         <p>Come explore this wonderful city in leisure 
             with a Tuktuk ride given by Jason Adkins,
-            your local e-bike enthusiast!</p>
+            your local e-bike enthusiast and wannabe horse at the front of the cart!</p>
 
         <br><br>
         
@@ -49,7 +54,7 @@
 
             <br>
     
-            <!-- To schedule the ride ahead of time -->
+            <!-- To schedule the ride ahead of time that day -->
             <select id="hour">
                 <option value="18:00">6</option>
                 <option value="19:00">7</option>
@@ -66,23 +71,23 @@
 
             <br><br>
     
-            <!-- To move to payment -->
+            <!-- Runs getDirect function from map.js to show info in the output div -->
             <button onclick="getDirect()">Order</button>
         </div>
 
-        
+        <!-- Where order details will be printed -->
         <div id="output"></div>
 
         <br><br><br><br>
 
+        <!-- Holds the map for easier formatting -->
         <div class="container">
             <div id="map"></div>
         </div>
-
-        <script src="map.js"></script>
     
         <br><br><br><br>
 
+        <!-- Displays contact infor for the company (AKA my dad) -->
         <div class="contact">
             <h2>Contact Info</h2>
             
@@ -97,6 +102,7 @@
 
     <!-- Footer Section -->
     <footer>
+        <!-- Basic footer info -->
         <div class="footer-content">
             <p>&copy; 2023 TukTuk Taxi</p>
             <ul class="footer-menu">
