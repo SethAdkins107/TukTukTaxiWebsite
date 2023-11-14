@@ -26,7 +26,8 @@ initMap();
 function getDirect() {
   var start = document.getElementById("start").value;
   var end = document.getElementById("end").value;
-  var dist;
+  var dist, time;
+
   var output = document.querySelector("#output");
 
   let routeRequest = {
