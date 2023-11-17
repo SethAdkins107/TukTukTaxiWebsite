@@ -10,7 +10,8 @@ async function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 41.543056, lng: -90.590836 },
     zoom: 13,
-  });
+    }
+  );
 
   // Initializes objects of shown type to call functions from the Maps API
   directServ = new google.maps.DirectionsService();
@@ -19,9 +20,20 @@ async function initMap() {
   // Initializes the renderer to reference the map created earlier
   directRend.setMap(map)
 
+  // Defines autocomplete restrictions to limit the results to Davenport, IA
+  var restrict = {
+    bounds: {
+      north: 41.59,
+      south: 41.49,
+      west: -90.63,
+      east: -90.42,
+    },
+    strictBounds: true,
+  }
+ 
   // Call to the AutoComplete functions from the Maps API for inputting locations
-  startAuto = new google.maps.places.Autocomplete( document.getElementById("start"));
-  endAuto = new google.maps.places.Autocomplete( document.getElementById("end"));
+  startAuto = new google.maps.places.Autocomplete(document.getElementById("start"), restrict);
+  endAuto = new google.maps.places.Autocomplete(document.getElementById("end"), restrict);
 
 }
 
