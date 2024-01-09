@@ -3,6 +3,9 @@
 // Stores map object
 let map, directServ, directRend, matrix, startAuto, endAuto;
 
+// Stores trip request for use in several functions
+let curr, start, end;
+
 // Puts the map on the page with intial data
 async function initMap() {
 
@@ -38,10 +41,10 @@ async function initMap() {
 }
 
 // Submits locations given and determines route and cost
-function getDirect() {
+function getCustDirect() {
   // Stores the input destinations
-  var start = document.getElementById("start").value;
-  var end = document.getElementById("end").value;
+  start = document.getElementById("start").value;
+  end = document.getElementById("end").value;
   
   // Connects this output variable to reference the output section in the HTML
   var output = document.querySelector("#output");
@@ -69,3 +72,31 @@ function getDirect() {
   })
 }
 
+// Creates route to customer and then to their destination
+function getDrivDirect() {
+  
+  // Connects this output variable to reference the output section in the HTML
+  var output = document.querySelector("#output");
+
+  // Builds the HTTPS request to the Maps API
+  let routeRequest = {
+    origin: start,
+    destination: end,
+    travelMode:"BICYCLING",
+  };
+
+  // Sends request to the route function and displays order details
+  directServ.route(routeRequest, function(result, status) {
+    // If the request is received and able to be processed correctly
+    if(status == "OK") {
+
+      // Prints the route received to the map on the page
+      directRend.setDirections(result)
+
+      // Prints the order details through rewriting the html code with the new results
+      output.innerHTML = "Distance: " + result.routes[0].legs[0].distance.text +
+      "<br>Time: " + result.routes[0].legs[0].duration.text +
+      "<br>Price: $" + (((result.routes[0].legs[0].distance.value / 1609) * 4) + 5).toFixed(2);
+    }
+  })
+}

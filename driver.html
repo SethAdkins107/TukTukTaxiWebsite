@@ -17,10 +17,48 @@
 </head>
 
 <body>
-    <header>
-        <!-- Just a heading to get started on the page -->
-        <div class="heading">
-            <a>Hello, drivers!</a>
-        </div>
-    </header>
+    <body onload="initMap()">
+        <header>
+            <nav>
+                <!--The main logo for the website  (tbd)-->
+                <div class="heading">
+                    <a> TukTuk Taxi Drivers </a>
+                </div>
+            </nav>
+        </header>
+    
+            <!-- Holds the map for easier formatting -->
+            <div class="container">
+                <div id="map"></div>
+            </div>
+        
+            <br><br><br><br>
+            
+            <button onclick="getDrivDirect()">Ready!</button>
+    
+            <!-- Displays contact infor for the company (AKA my dad) -->
+            <div class="contact">
+                <h2>Contact Info</h2>
+                
+                <p> 
+                    +1 (563) 396-4371
+                    <br>
+                    jasonadkins@gmail.com
+                </p>
+            </div>
+        </section>
+    
+    
+        <!-- Footer Section -->
+        <footer>
+            <!-- Basic footer info -->
+            <div class="footer-content">
+                <p>&copy; 2023 TukTuk Taxi</p>
+                <ul class="footer-menu">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
 </body>
