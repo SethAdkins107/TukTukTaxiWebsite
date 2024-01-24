@@ -37,6 +37,7 @@ async function initMap() {
   // Call to the AutoComplete functions from the Maps API for inputting locations
   startAuto = new google.maps.places.Autocomplete(document.getElementById("start"), restrict);
   endAuto = new google.maps.places.Autocomplete(document.getElementById("end"), restrict);
+  driverAuto = new google.maps.places.Autocomplete(document.getElementById("driver"), restrict);
 
 }
 
@@ -55,6 +56,9 @@ function getCustDirect() {
     destination: end,
     travelMode:"BICYCLING",
   };
+
+  // Stores the route to be retrieved on further pages
+  localStorage.setItem("route", JSON.stringify(routeRequest))
 
   // Sends request to the route function and displays order details
   directServ.route(routeRequest, function(result, status) {
@@ -78,15 +82,20 @@ function getDrivDirect() {
   // Connects this output variable to reference the output section in the HTML
   var output = document.querySelector("#output");
 
-  // Builds the HTTPS request to the Maps API
-  let routeRequest = {
-    origin: start,
-    destination: end,
-    travelMode:"BICYCLING",
+  // Retrieves the Maps API request from the customer to show to the driver
+  let custRequest = JSON.parse(localStorage.getItem("route"))
+  
+  // Builds the Maps API request for the driver
+  driver = document.getElementById("driver").value
+  let driverRequest = {
+    origin: driver,
+    destination: custRequest.destination,
+    //intermediates: [custRequest.origin],
+    travelMode: "BICYCLING",
   };
 
   // Sends request to the route function and displays order details
-  directServ.route(routeRequest, function(result, status) {
+  directServ.route(driverRequest, function(result, status) {
     // If the request is received and able to be processed correctly
     if(status == "OK") {
 
