@@ -44,16 +44,16 @@ async function initMap() {
 // Submits locations given and determines route and cost
 function getCustDirect() {
   // Stores the input destinations
-  start = document.getElementById("start").value;
-  end = document.getElementById("end").value;
+  start = startAuto.getPlace();
+  end = endAuto.getPlace();
   
   // Connects this output variable to reference the output section in the HTML
   var output = document.querySelector("#output");
 
   // Builds the HTTPS request to the Maps API
   let routeRequest = {
-    origin: start,
-    destination: end,
+    origin: start.placeID,
+    destination: end.placeID,
     travelMode:"BICYCLING",
   };
 
@@ -86,11 +86,11 @@ function getDrivDirect() {
   let custRequest = JSON.parse(localStorage.getItem("route"))
   
   // Builds the Maps API request for the driver
-  driver = document.getElementById("driver").value
+  driverAuto = document.getElementById("driver").value
   let driverRequest = {
-    origin: driver,
+    origin: driverAuto,
     destination: custRequest.destination,
-    //intermediates: [custRequest.origin],
+    intermediates: [custRequest.origin],
     travelMode: "BICYCLING",
   };
 
