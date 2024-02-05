@@ -44,16 +44,16 @@ async function initMap() {
 // Submits locations given and determines route and cost
 function getCustDirect() {
   // Stores the input destinations
-  start = startAuto.getPlace();
-  end = endAuto.getPlace();
+  start = document.getElementById("start").value;
+  end = document.getElementById("end"). value;
   
   // Connects this output variable to reference the output section in the HTML
   var output = document.querySelector("#output");
 
   // Builds the HTTPS request to the Maps API
   let routeRequest = {
-    origin: start.placeID,
-    destination: end.placeID,
+    origin: start,
+    destination: end,
     travelMode:"BICYCLING",
   };
 
@@ -66,7 +66,7 @@ function getCustDirect() {
     if(status == "OK") {
 
       // Prints the route received to the map on the page
-      directRend.setDirections(result)
+      directRend.setDirections(result);
 
       // Prints the order details through rewriting the html code with the new results
       output.innerHTML = "Distance: " + result.routes[0].legs[0].distance.text +
@@ -80,32 +80,28 @@ function getCustDirect() {
 function getDrivDirect() {
   
   // Connects this output variable to reference the output section in the HTML
-  var output = document.querySelector("#output");
+  var driverOutput = document.querySelector("#driverOutput");
 
   // Retrieves the Maps API request from the customer to show to the driver
   let custRequest = JSON.parse(localStorage.getItem("route"))
   
   // Builds the Maps API request for the driver
-  driverAuto = document.getElementById("driver").value
+  driver = document.getElementById("driver").value
   let driverRequest = {
-    origin: driverAuto,
+    origin: driver,
     destination: custRequest.destination,
-    intermediates: [custRequest.origin],
+    waypoints: [{location: custRequest.origin, stopover : true}],
     travelMode: "BICYCLING",
-  };
+  };  
 
   // Sends request to the route function and displays order details
   directServ.route(driverRequest, function(result, status) {
+    driverOutput.innerHTML = "start?";
     // If the request is received and able to be processed correctly
     if(status == "OK") {
 
       // Prints the route received to the map on the page
-      directRend.setDirections(result)
-
-      // Prints the order details through rewriting the html code with the new results
-      output.innerHTML = "Distance: " + result.routes[0].legs[0].distance.text +
-      "<br>Time: " + result.routes[0].legs[0].duration.text +
-      "<br>Price: $" + (((result.routes[0].legs[0].distance.value / 1609) * 4) + 5).toFixed(2);
+      directRend.setDirections(result);
     }
   })
 }

@@ -50,6 +50,11 @@ header {
     text-align: center;
 }
 
+/* Centers output within the driver page */
+#driverOutput {
+    text-align: center;
+}
+
 /* Whole footer section */
 footer {
     background-color: #333;
