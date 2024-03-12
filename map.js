@@ -96,7 +96,6 @@ function getDrivDirect() {
 
   // Sends request to the route function and displays order details
   directServ.route(driverRequest, function(result, status) {
-    driverOutput.innerHTML = "start?";
     // If the request is received and able to be processed correctly
     if(status == "OK") {
 

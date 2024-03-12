@@ -16,58 +16,57 @@
 
 </head>
 
-<body>
-    <body onload="initMap()">
-        <header>
-            <nav>
-                <!--The main logo for the website  (tbd)-->
-                <div class="heading">
-                    <a> TukTuk Taxi Drivers </a>
-                </div>
-            </nav>
-        </header>
-    
-            <!-- Holds the map for easier formatting -->
-            <div class="container">
-                <div id="map"></div>
+<body onload="initMap()">
+    <header>
+        <nav>
+            <!--The main logo for the website  (tbd)-->
+            <div class="heading">
+                <a> TukTuk Taxi Drivers </a>
             </div>
-        
-            <br><br><br><br>
+        </nav>
+    </header>
 
-            <!-- Holds output to test values from the drivers page and functions-->
-            <div id="driverOutput"></div>
-
-
+    <section class="hero">
+        <!-- Holds input and buttons to format-->
+        <div class="input">
             <!-- To have input box for start point-->
             <input id="driver" type="text" placeholder="Current Location">
 
             <br>
-            
-            <button onclick="getDrivDirect()">Ready!</button>
-    
-            <!-- Displays contact infor for the company (AKA my dad) -->
-            <div class="contact">
-                <h2>Contact Info</h2>
-                
-                <p> 
-                    +1 (563) 396-4371
-                    <br>
-                    jasonadkins@gmail.com
-                </p>
-            </div>
-        </section>
-    
-    
-        <!-- Footer Section -->
-        <footer>
-            <!-- Basic footer info -->
-            <div class="footer-content">
-                <p>&copy; 2023 TukTuk Taxi</p>
-                <ul class="footer-menu">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </footer>
-    </body>
+        
+            <button id="pickup" onclick="getDrivDirect()">Ready!</button>
+        </div>
+
+        <br><br>
+
+        <!-- Holds output to test values from the drivers page and functions-->
+        <div id="driverOutput"></div>
+        
+        <!-- Holds the map for easier formatting -->
+        <div class="container">
+            <div id="map"></div>
+        </div>       
+
+        <!-- Displays contact infor for the company (AKA my dad) -->
+        <div class="contact">
+            <h2>Contact Info</h2>
+            <p> 
+                +1 (563) 396-4371
+                <br>
+                jasonadkins@gmail.com
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Basic footer info -->
+        <div class="footer-content">
+            <p>&copy; 2023 TukTuk Taxi</p>
+            <ul class="footer-menu">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>

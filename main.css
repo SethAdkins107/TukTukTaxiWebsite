@@ -45,14 +45,13 @@ header {
     margin: 20px auto;
 }
 
-/* Centers output within the hero */
-.hero #output {
+/* Centers output within the hero for initial page and driver's page */
+#output {
     text-align: center;
 }
 
-/* Centers output within the driver page */
-#driverOutput {
-    text-align: center;
+li {
+    list-style-type: none;
 }
 
 /* Whole footer section */
