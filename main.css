@@ -6,7 +6,7 @@ body {
 
 /* Whole header section */
 header {
-    background-color: #000;
+    background-color: #A7BEAE;
     color: #fff;
     padding: 15px;
     display: flex;
@@ -14,7 +14,7 @@ header {
 
 /* Logo lettering */
 .heading {
-    color: #fff;
+    color: #B85042;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
@@ -22,7 +22,7 @@ header {
 
 /* Whole hero section within the body */
 .hero {
-    background-color: #fff;
+    background-color: #E7E8D1;
     text-align: center;
     align-items: center;
     align-content: center;
@@ -33,9 +33,16 @@ header {
 
 /* Title lettering seen in the hero */
 .hero h1 {
-    color: #50c878;
-    text-decoration: underline;
-    font-family: cursive;
+    color: #B85042;
+    font-family: 'Trebuchet MS';
+}
+
+button, select {
+    font-weight: 600;
+    background-color: #A7BEAE;
+    color: #B85042;
+    border-style: outset;
+    border-color: #83a38c;
 }
 
 /* Sets map size */
@@ -50,14 +57,10 @@ header {
     text-align: center;
 }
 
-li {
-    list-style-type: none;
-}
-
 /* Whole footer section */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #A7BEAE;
+    color: #B85042;
     text-align: center;
     padding: 10px;
 }

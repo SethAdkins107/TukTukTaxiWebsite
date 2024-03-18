@@ -31,11 +31,6 @@
     <section class="hero">
         <!-- Basic intro -->
         <h1>Welcome to Davenport</h1>
-        <p>Come explore this wonderful city in leisure 
-            with a Tuktuk ride given by Jason Adkins,
-            your local e-bike enthusiast and wannabe horse at the front of the cart!</p>
-
-        <br><br>
         
         <!-- Input Section -->
         <div class="input">
@@ -50,7 +45,7 @@
             <br><br>
     
             <!-- To order the ride for right now -->
-            <button id="now">ASAP</button>
+            <button id="now" onclick="getCustDirect()">ASAP</button>
 
             or
     
@@ -72,21 +67,27 @@
             <br><br>
     
             <!-- Runs getDirect function from map.js to show info in the output div -->
-            <button onclick="getCustDirect()">Order</button>
+            <button id="order" onclick="getCustDirect()">Order</button>
         </div>
 
         <!-- Where order details will be printed -->
         <div id="output"></div>
 
-        <br><br><br><br>
+        <br>
 
         <!-- Holds the map for easier formatting -->
         <div class="container">
             <div id="map"></div>
         </div>
     
-        <br><br><br><br>
+        <br><br>
 
+        <a href="driver.html">For Drivers</a>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer>
         <!-- Displays contact infor for the company (AKA my dad) -->
         <div class="contact">
             <h2>Contact Info</h2>
@@ -98,19 +99,12 @@
             </p>
         </div>
 
-        <a href="driver.html">For Drivers</a>
-    </section>
-
-
-    <!-- Footer Section -->
-    <footer>
         <!-- Basic footer info -->
-        <div class="footer-content">
+        <div class="footContent">
             <p>&copy; 2023 TukTuk Taxi</p>
-            <ul class="footer-menu">
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-            </ul>
+            <a href="privacy.html">Privacy Policy</a>
+            <br>
+            <a href="terms.html">Terms of Service</a>
         </div>
     </footer>
 

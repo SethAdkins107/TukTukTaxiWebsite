@@ -27,13 +27,14 @@
     </header>
 
     <section class="hero">
+        <h1>Get to Work!</h1>
+
         <!-- Holds input and buttons to format-->
         <div class="input">
             <!-- To have input box for start point-->
             <input id="driver" type="text" placeholder="Current Location">
-
-            <br>
-        
+            
+            <!-- Submits driver location to get route to customer -->
             <button id="pickup" onclick="getDrivDirect()">Ready!</button>
         </div>
 
@@ -46,7 +47,10 @@
         <div class="container">
             <div id="map"></div>
         </div>       
+    </section>
 
+    <!-- Footer Section -->
+    <footer>
         <!-- Displays contact infor for the company (AKA my dad) -->
         <div class="contact">
             <h2>Contact Info</h2>
@@ -56,17 +60,13 @@
                 jasonadkins@gmail.com
             </p>
         </div>
-    </section>
 
-    <!-- Footer Section -->
-    <footer>
         <!-- Basic footer info -->
         <div class="footer-content">
             <p>&copy; 2023 TukTuk Taxi</p>
-            <ul class="footer-menu">
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-            </ul>
+            <a href="privacy.html">Privacy Policy</a>
+            <br>
+            <a href="terms.html">Terms of Service</a>
         </div>
     </footer>
 </body>
