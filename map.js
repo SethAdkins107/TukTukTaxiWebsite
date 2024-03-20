@@ -6,6 +6,9 @@ let map, directServ, directRend, matrix, startAuto, endAuto;
 // Stores trip request for use in several functions
 let curr, start, end;
 
+// Stores a map of the requests for the day to display to the drivers to choose from
+const requests = new map();
+
 // Puts the map on the page with intial data
 async function initMap() {
 
